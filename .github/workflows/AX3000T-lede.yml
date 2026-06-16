@@ -204,12 +204,11 @@ jobs:
 
     - name: Generate release tag  # 生成发布标签
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-        touch release.txt
-        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
+        VERSION1="${REPO_BRANCH#*-}"
+        echo -e "🎉 AX3000T 平台\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.66.1" >> release.txt
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_AX3000T_Lede")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Delete workflow runs  # 删除工作流运行
