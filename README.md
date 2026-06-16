@@ -7,7 +7,7 @@
 
 # Version
 
-	REPO_URL: https://github.com/coolsnowwolf/lede
+	REPO_URL: https://github.com/coolsnowwolf/lede.git
 	REPO_BRANCH: masterREPO_BRANCH: master
   
 
