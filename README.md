@@ -1,10 +1,4 @@
-# immortalWrt 25.12
-- Cudy TR3000
-- 360T7
-- R3G
-
-
-# padavanonly 24.10
+# LEDE
 - Cudy TR3000
 - 360T7
 
@@ -13,11 +7,8 @@
 
 # Version
 
-	REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-	REPO_BRANCH: openwrt-25.12
-  
-	REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
-	REPO_BRANCH: openwrt-24.10-6.6
+	REPO_URL: https://github.com/coolsnowwolf/lede
+	REPO_BRANCH: masterREPO_BRANCH: master
   
 
 # 默认设置
@@ -78,8 +69,8 @@ Build OpenWrt using GitHub Actions
 - [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub Actions](https://github.com/features/actions)
 - [OpenWrt](https://github.com/openwrt/openwrt)
-- [Immortalwrt](https://github.com/immortalwrt/immortalwrt)
-- [padavanonly]( https://github.com/padavanonly/immortalwrt-mt798x-6.6)
+- [LEDE](https://github.com/coolsnowwolf/lede)
+
 
 ## License
 
