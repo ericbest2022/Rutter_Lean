@@ -198,16 +198,16 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         VERSION1="${REPO_BRANCH#*-}"
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_MT7981_Lede")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_AX3000_Lede")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
         cat > release.txt << EOF
         ### 🐬 固件信息
-        - ✳️ 平台型号: MT7981
+        - ✳️ 平台型号: AX3000
         - 🪐 固件源码: ${{ env.REPO_URL }}
         - ✅ 源码分支: ${{ env.REPO_BRANCH }}
         - 📅 创建时间: $(date +"%Y-%m-%d %H:%M:%S")
-        - 🌐 默认地址: 192.168.66.1
+        - 🌐 默认地址: 192.168.6.1
         - 🔑 默认密码: password
 
     - name: 上传固件到发布
