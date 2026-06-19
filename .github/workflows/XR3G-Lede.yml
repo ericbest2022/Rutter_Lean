@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 7981-lede
+name: XR3G-Lede
 
 permissions: write-all
 #开启写权限，防止无法上传到release
@@ -17,15 +17,15 @@ on:
   repository_dispatch:
   workflow_dispatch:
     #自动编译：UTC 00:00 = 中国 08:00，分,时,日,月,周
-#  schedule:
-#    - cron: 8 0 8,18,28 * *
+  schedule:
+    - cron: 8 0 1,11,21 * *
         # 分,时,日,月,周。每周 四 20时执行一次 (UTC时间)
   
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: MT7981.config  # 配置文件
+  CONFIG_FILE: R3G.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -198,12 +198,12 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         VERSION1="${REPO_BRANCH#*-}"
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_AX3000_Lede")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_R3G_Lede")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
         cat > release.txt << EOF
         ### 🐬 固件信息
-        - ✳️ 平台型号: AX3000
+        - ✳️ 平台型号: R3G
         - 🪐 固件源码: ${{ env.REPO_URL }}
         - ✅ 源码分支: ${{ env.REPO_BRANCH }}
         - 📅 创建时间: $(date +"%Y-%m-%d %H:%M:%S")
