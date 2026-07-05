@@ -10,5 +10,10 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+# 添加 passwall2 插件及依赖包
+git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall-packages
+
+
 # Modify default IP
 sed -i 's/192.168.*.1/192.168.6.1/g' package/base-files/files/bin/config_generate
