@@ -9,7 +9,7 @@
 # Version
 
 	REPO_URL: https://github.com/coolsnowwolf/lede.git
-	REPO_BRANCH: masterREPO_BRANCH: master
+	REPO_BRANCH: master
   
 
 # 默认设置
