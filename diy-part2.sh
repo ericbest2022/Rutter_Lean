@@ -13,3 +13,7 @@ sed -i 's/192.168.*.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 
 # Modify hostname
 #sed -i 's/OpenWrt/360T7/g' package/base-files/files/bin/config_generate
+
+# 删除 helloworld / ssr-plus 源码目录
+rm -rf package/helloworld
+rm -rf package/lean/luci-app-ssr-plus
