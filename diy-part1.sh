@@ -14,15 +14,15 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git' >>feeds.conf.default
-echo 'src-git passwall https://github.com/Openwrt-Passwall/openwrt-passwall.git' >>feeds.conf.default
+# echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/Openwrt-Passwall/openwrt-passwall.git' >>feeds.conf.default
 # echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
 # echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
 
 
 # 添加 passwall2 插件及依赖包
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 # git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/openwrt-passwall-packages 可不用
 
 
