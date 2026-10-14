@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: MT7981-LedeVPN
+name: MT7981-Lede-passwall
 
 permissions: write-all
 #开启写权限，防止无法上传到release
@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: MT7981-Lvpn.config
+  CONFIG_FILE: MT7981-L-passwall.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -196,7 +196,7 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         VERSION1="${REPO_BRANCH#*-}"
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M_MT7981_Lede-VPN-${VERSION1}")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M_MT7981_Lede-passwall-${VERSION1}")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
         cat > release.txt << EOF
